@@ -7,8 +7,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'wikictf',
-        'USER': PRODUCTION_DATABASE_USER,
-        'PASSWORD': PRODUCTION_DATABASE_PASS,
+        'USER': 'REDACTED',
+        'PASSWORD': 'REDACTED',
         'HOST': 'localhost',
         'PORT': '',
     }
