@@ -7,7 +7,7 @@ function main() {
 	// Hide .navbar first
 	$(".navbar").hide();
 	$('.navbar').fadeIn();
-	
+
 	
 	// Preloader */
 	  	$(window).load(function() {
