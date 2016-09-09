@@ -6,6 +6,5 @@ deploy:
        python wikictf/manage.py makemigrations gameplatform --noinput; \
        python wikictf/manage.py migrate --noinput; \
        python wikictf/manage.py collectstatic --noinput; \
-       systemctl restart gunicorn; \
 
     )
