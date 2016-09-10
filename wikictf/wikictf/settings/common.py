@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '*@f9_^@-fsm9)0j2k!1o_mimrhhh(p5(c6xa78v40_61zf59kh'
-
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gameplatform'
+    'gameplatform',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
