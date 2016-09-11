@@ -3,13 +3,14 @@ from django.template.context_processors import csrf
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .forms import SignupForm
+
+from .forms import SignupForm,LoginForm
 from .models import Profile, Problem
+
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
     return render(request, 'gameplatform/index.html' )
-
 
 def signup(request):
 
