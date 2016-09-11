@@ -24,7 +24,7 @@ SECRET_KEY = '*@f9_^@-fsm9)0j2k!1o_mimrhhh(p5(c6xa78v40_61zf59kh'
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-LOGIN_URL = '/login'
+LOGIN_URL = '/login/'
 ALLOWED_HOSTS = []
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 

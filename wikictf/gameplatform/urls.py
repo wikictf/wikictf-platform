@@ -4,8 +4,8 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^signup/', views.signup, name='signup'),
-    url(r'^play/', views.play, name='play')
-    url(r'^login/', auth_views.login, {'template_name': 'gameplatform/login.html'},name='login')
+    url(r'^signup/$', views.signup, name='signup'),
+    url(r'^play/$', views.play, name='play'),
+    url(r'^login/$', auth_views.login, {'template_name': 'gameplatform/login.html'},name='login')
 
 ]
