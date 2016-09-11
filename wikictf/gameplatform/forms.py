@@ -3,6 +3,24 @@ from crispy_forms.helper import FormHelper
 from django.contrib.auth.models import User
 from crispy_forms.layout import Submit
 from django.core.exceptions import ValidationError
+class LoginForm(forms.Form):
+    username = forms.CharField(
+        label="Username",
+        max_length=200,
+        required=True
+
+    )
+    password = forms.CharField(widget=forms.PasswordInput,
+                               label="Password")
+
+    def __init__(self, *args, **kwargs):
+        super(SignupForm, self).__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'loginForm'
+        self.helper.form_method = 'post'
+        self.helper.form_action = '.'
+        self.helper.add_input(Submit('submit', 'Login'))
+
 class SignupForm(forms.Form):
     username = forms.CharField(
         label = "Username",
