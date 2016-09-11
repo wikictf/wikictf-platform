@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.template.context_processors import csrf
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import SignupForm
-from .models import Profile
+from .models import Profile, Problem
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
@@ -32,3 +34,13 @@ def signup(request):
     else:
         form = SignupForm()
     return render(request, 'gameplatform/signup.html', {'sign_up': form} )
+
+@login_required
+def play(request):
+    problem_list = Problem.objects.all().order_by("value")
+    context = {
+        "problem_list": problem_list,
+        "enable_submission": request.user.is_authenticated()
+    }
+    context.update(csrf(request))
+    return render(request, "gameplatform/play.html", context)
