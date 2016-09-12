@@ -1,0 +1,28 @@
+
+{% extends "gameplatform/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>WikiCTF - Play</title>
+
+{% endblock %}
+
+{% block header %}
+<!--Empty heaer-->
+{% endblock %}
+{% block sectiontitle %}
+
+{% endblock %}
+{% block container %}
+
+<form>{% csrf_token %}</form>
+{% for problem in problem_list %}
+
+
+	    {% include "gameplatform/problem.html" %}
+
+
+{% endfor %}
+
+
+{% endblock %}
