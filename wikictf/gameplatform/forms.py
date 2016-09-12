@@ -38,6 +38,9 @@ class SignupForm(forms.Form):
                                label="Password")
     password2 = forms.CharField(widget=forms.PasswordInput,
                                 label="Password (Again)")
+    signupcode = forms.CharField(
+                                label="Signup Code",
+                                required = True)
 
     def __init__(self, *args, **kwargs):
         super(SignupForm, self).__init__(*args, **kwargs)
@@ -53,5 +56,6 @@ class SignupForm(forms.Form):
             raise ValidationError('Username already exists.')
         if cleaned_data.get('password') != cleaned_data.get('password2'):
             raise ValidationError('Passwords do not match')
-
+        if cleaned_data.get('signupcode') != "catsarebetter":
+            raise ValidationError('Need a valid signup code')
         return cleaned_data
